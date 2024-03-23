@@ -45,7 +45,6 @@ psutil==5.9.5
 pyasn1==0.4.8
 pyasn1-modules==0.2.7
 pyDeprecate==0.3.2
-pyg-lib==0.2.0+pt113cu116
 pyparsing==3.0.9
 python-dateutil==2.8.2
 pytorch-lightning==1.7.1
@@ -57,12 +56,12 @@ sklearn==0.0
 tensorboard==2.10.0
 tensorboard-data-server==0.6.0
 threadpoolctl==3.1.0
-torch==1.13.1
-torch-cluster==1.6.1+pt113cu116
+
+torch-cluster==1.6.1
 torch-geometric==2.3.1
-torch-scatter==2.1.1+pt113cu116
-torch-sparse==0.6.17+pt113cu116
-torch-spline-conv==1.2.2+pt113cu116
+torch-scatter==2.1.1
+torch-sparse==0.6.17
+torch-spline-conv==1.2.2
 torchaudio==0.12.1
 torchmetrics==0.9.3
 torchvision==0.13.1

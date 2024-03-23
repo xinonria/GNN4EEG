@@ -11,6 +11,7 @@ import copy
 import json
 from .load_data import load_srt_de
 from .models import *
+import scipy.io as scio
 
 
 class DataLoader(object):
@@ -132,7 +133,7 @@ def data_FACED(protocol, categories, data_path):
             "The label categories in FACED dataset should be either 2 or 9.")
 
     # Note: the signals are in dict['de_lds']
-    data = hdf5.loadmat(data_path)['de_lds']
+    data = scio.loadmat(data_path)['de_lds']
     # data shape: (123, 720 or 840, 120)  120=4*30  4 band and 30 nodes
     label_type = 'cls2' if categories == 2 else 'cls9'
     data, label_repeat, n_samples = load_srt_de(

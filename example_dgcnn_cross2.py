@@ -19,7 +19,6 @@ if __name__ =='__main__':
     print(electrode_position)
     # model initialization
     model_DGCNN=DGCNN(num_nodes,num_hiddens,num_layers,electrode_position)
-
     subject_num=123
     section_size=loader.data.shape[0]/subject_num
     subject_id_list=np.array([int(i/section_size) for i in range(loader.data.shape[0])])
@@ -28,5 +27,5 @@ if __name__ =='__main__':
     K=10
     best_dict,out_acc_list=evaluation(model_DGCNN,loader,'cv',grid={"lr":0.001,"hiddens":80,'epoch':list(range(0,100)),'l1_reg':0.005,'l2_reg':0.005,
                                                                 'batch_size':256,'dropout':0.5},
-                    categories=2,K=K,device=torch.device('cuda:3'),optimizer='Adam',train_log=True)
+                    categories=2,K=K,device=torch.device('cuda:0'),optimizer='Adam',train_log=True)
     print(best_dict,out_acc_list)

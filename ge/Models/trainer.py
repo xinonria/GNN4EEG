@@ -17,7 +17,7 @@ from imblearn.over_sampling import SMOTE
 class Trainer(object):
     def __init__(self, model_f, num_nodes, num_hiddens=400, num_classes=2,
                  batch_size=256, num_epoch=50, lr=0.005, l1_reg=0, l2_reg=0, dropout=0.5, early_stop=20,
-                 optimizer='Adam', device=torch.device('cpu'),
+                 optimizer='Adam', device=torch.device('cuda:1'),
                  extension: dict = None):
         self.num_nodes = num_nodes
         self.num_hiddens = num_hiddens
