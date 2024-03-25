@@ -1,6 +1,13 @@
 
 ![logo](./src/pics/logo.png)
 ---
+
+# What am i do?
+
+- Added conda dependencies
+- Updated torch version to 2.1.1 to work with cuda12.1.
+- Load mat files using scipy.io instead of hdf5
+
 Orginal Paper: [GNN4EEG: A Benchmark and Toolkit for Electroencephalography Classification with Graph Neural Network](https://arxiv.org/abs/2309.15515) 
 
 <!-- Electroencephalography (EEG) classification is a crucial task in neuroscience, neural engineering, and several commercial applications. Traditional EEG classification models, however, have often overlooked or inadequately leveraged the brain’s topological information. Recognizing this shortfall, there has been a burgeoning interest in recent years in harnessing the potential of Graph Neural Networks (GNN) to exploit the topological information by modeling features selected from each EEG channel in a graph structure. 
@@ -51,11 +58,11 @@ A data flow diagram is illustrated as following:
 
 ## Getting Started
 
-1. Install [Anaconda](https://docs.conda.io/en/latest/miniconda.html) with Python >= 3.5
+1. Install [Anaconda](https://docs.conda.io/en/latest/miniconda.html) with Python >= 3.9
 2. Clone the repository
 
 ```bash
-git clone https://github.com/Miracle-2001/GNN4EEG.git
+git clone https://github.com/xinonria/GNN4EEG.git
 ```
 
 3. Install requirements and step into the `src` folder
@@ -63,7 +70,7 @@ git clone https://github.com/Miracle-2001/GNN4EEG.git
 ```bash
 cd GNN4EEG
 cd src
-pip install -r requirements.txt
+conda env create -f gnn4eeg.yaml
 ```
 
 4. (optional) To download the FACED dataset, please refer to the [DOI link](https://doi.org/10.7303/syn50614194). Detailed steps will be discussed in [here](./src/further_illustration/FACED_dataset_preparations.md)
@@ -76,8 +83,8 @@ Download link: [FACED_dataset_2_labels.mat](https://drive.google.com/file/d/1e9e
 
 After download, you can use the code below to load the dataset.
 ```python
-import hdf5storage as hdf5
-data = hdf5.loadmat('FACED_dataset_2_labels.mat')['de_lds']
+import scipy.io as scio
+data = scio.loadmat('FACED_dataset_2_labels.mat')['de_lds']
 print(data.shape) #(123, 720, 150)
 ```
 
