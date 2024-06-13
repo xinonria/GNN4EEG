@@ -2,7 +2,7 @@
 ![logo](./src/pics/logo.png)
 ---
 
-# What am i do?
+# What have I done?
 
 - Added conda dependencies
 - Updated torch version to 2.1.1 to work with cuda12.1.
